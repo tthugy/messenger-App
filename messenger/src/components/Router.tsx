@@ -7,14 +7,19 @@ import Home from "../routes/Home";
 import Profile from "../routes/Profile";
 
 const Router = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Auth />} />
-      <Route path="/page1/*" element={<EditProfile />} />
-      <Route path="/page2/*" element={<Home />} />
-      <Route path="/*" element={<Profile />} />
+      {isLoggedIn ?
+      <>
+      <Route path="/" element={<Home />}></Route>
+      </> : <Route path="/" element={<Auth />} />}
     </Routes>
   </BrowserRouter>
+  )
 }
 
 export default Router;
