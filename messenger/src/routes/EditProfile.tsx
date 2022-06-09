@@ -2,7 +2,7 @@ import React from "react";
 
 const EditProfile = () => {
     return (
-        <div>Edit Profile</div>
+        <div>Edit Profile !</div>
     )
 }
 
